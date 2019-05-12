@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="zzu.mavis.crm.classes.domain.CrmClasses" table="Crm_Classes">
+        <id name="classId">
+            <generator class="uuid"></generator>
+        </id>
+       <property name="name"></property>
+        <property name="beginTime" type="date"></property>
+        <property name="endTime" type="date"></property>
+        <property name="status"></property>
+        <property name="totalCount" type="java.lang.Integer"></property>
+        <property name="upgradeCount" type="java.lang.Integer"></property>
+        <property name="changeCount" type="java.lang.Integer"></property>
+        <property name="runoffCount" type="java.lang.Integer"></property>
+        <property name="remark"></property>
+        <property name="uploadTime" >
+            <column name="uploadTime" sql-type="datetime"></column>
+        </property>
+        <property name="uploadPath"></property>
+        <property name="uploadFileName"></property>
+       <many-to-one name="crmCoursetype" column="courseTypeId" class="zzu.mavis.crm.coursetype.domain.CrmCourseType"></many-to-one>
+    </class>
+</hibernate-mapping>
